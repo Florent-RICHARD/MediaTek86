@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.modele
 {
-    class Responsable
+    /// <summary>
+    /// Création d'un responsable
+    /// </summary>
+    public class Responsable
     {
         // Déclaration des propriétés
         private string login;

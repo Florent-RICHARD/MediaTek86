@@ -1,4 +1,4 @@
-﻿using MediaTek86.vue;
+﻿using MediaTek86.controle;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace MediaTek86
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSeConnecter());
+            new Controle();
         }
     }
 }

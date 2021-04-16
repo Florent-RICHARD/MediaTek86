@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.modele
 {
-    class Motif
+    /// <summary>
+    /// Création d'un motif
+    /// </summary>
+    public class Motif
     {
         // Déclaration des propriétés
         private int idmotif;

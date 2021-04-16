@@ -6,39 +6,32 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.modele
 {
-    class Service
+    public class Service
     {
-        // Déclaration des propriétés
         private int idservice;
         private string nom;
 
-        /// <summary>
-        /// Retourne idService
-        /// </summary>
-        /// <returns></returns>
-        public int GetIdService()
-        {
-            return idservice;
-        }
-
-        /// <summary>
-        /// Retourne le nom
-        /// </summary>
-        /// <returns></returns>
-        public string GetNom()
-        {
-            return nom;
-        }
+        public int Idservice { get => idservice; }
+        public string Nom { get => nom; }
 
         /// <summary>
         /// Constructeur : valorise les propriétés
         /// </summary>
         /// <param name="idservice"></param>
         /// <param name="nom"></param>
-        public Service(int idservice, string nom )
+        public Service(int idservice, string nom)
         {
             this.idservice = idservice;
             this.nom = nom;
+        }
+
+        /// <summary>
+        /// Définit l'information à afficher (juste le nom)
+        /// </summary>
+        /// <returns>nom du profil</returns>
+        public override string ToString()
+        {
+            return this.nom;
         }
 
     }

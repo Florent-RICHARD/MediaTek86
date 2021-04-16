@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstListePersonnel = new System.Windows.Forms.ListBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSupPersonnel = new System.Windows.Forms.Button();
             this.btnModifPersonnel = new System.Windows.Forms.Button();
             this.btnGererAbsence = new System.Windows.Forms.Button();
@@ -43,15 +43,11 @@
             this.lblService = new System.Windows.Forms.Label();
             this.cbbService = new System.Windows.Forms.ComboBox();
             this.btnAjouterPersonnel = new System.Windows.Forms.Button();
+            this.dgvPersonnel = new System.Windows.Forms.DataGridView();
+            this.btnEnregistrerPersonnel = new System.Windows.Forms.Button();
+            this.btnAnnulerAjout = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstListePersonnel
-            // 
-            this.lstListePersonnel.FormattingEnabled = true;
-            this.lstListePersonnel.Location = new System.Drawing.Point(25, 11);
-            this.lstListePersonnel.Name = "lstListePersonnel";
-            this.lstListePersonnel.Size = new System.Drawing.Size(707, 277);
-            this.lstListePersonnel.TabIndex = 0;
             // 
             // btnSupPersonnel
             // 
@@ -84,7 +80,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.Location = new System.Drawing.Point(21, 342);
+            this.lblNom.Location = new System.Drawing.Point(22, 361);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(54, 19);
             this.lblNom.TabIndex = 4;
@@ -94,7 +90,7 @@
             // 
             this.lblTel.AutoSize = true;
             this.lblTel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblTel.Location = new System.Drawing.Point(21, 372);
+            this.lblTel.Location = new System.Drawing.Point(22, 391);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(94, 19);
             this.lblTel.TabIndex = 5;
@@ -104,7 +100,7 @@
             // 
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblMail.Location = new System.Drawing.Point(22, 402);
+            this.lblMail.Location = new System.Drawing.Point(23, 421);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(48, 19);
             this.lblMail.TabIndex = 6;
@@ -113,7 +109,7 @@
             // txtTel
             // 
             this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(121, 371);
+            this.txtTel.Location = new System.Drawing.Point(122, 390);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(113, 24);
             this.txtTel.TabIndex = 7;
@@ -121,7 +117,7 @@
             // txtNom
             // 
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(121, 341);
+            this.txtNom.Location = new System.Drawing.Point(122, 360);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(113, 24);
             this.txtNom.TabIndex = 8;
@@ -129,16 +125,16 @@
             // txtMail
             // 
             this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(121, 400);
+            this.txtMail.Location = new System.Drawing.Point(122, 419);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(177, 24);
+            this.txtMail.Size = new System.Drawing.Size(261, 24);
             this.txtMail.TabIndex = 9;
             // 
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
             this.lblPrenom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrenom.Location = new System.Drawing.Point(312, 342);
+            this.lblPrenom.Location = new System.Drawing.Point(313, 361);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(75, 19);
             this.lblPrenom.TabIndex = 10;
@@ -147,7 +143,7 @@
             // txtPrenom
             // 
             this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrenom.Location = new System.Drawing.Point(393, 340);
+            this.txtPrenom.Location = new System.Drawing.Point(394, 359);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(113, 24);
             this.txtPrenom.TabIndex = 11;
@@ -156,7 +152,7 @@
             // 
             this.lblService.AutoSize = true;
             this.lblService.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblService.Location = new System.Drawing.Point(312, 372);
+            this.lblService.Location = new System.Drawing.Point(313, 391);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(70, 19);
             this.lblService.TabIndex = 12;
@@ -166,29 +162,69 @@
             // 
             this.cbbService.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.cbbService.FormattingEnabled = true;
-            this.cbbService.Items.AddRange(new object[] {
-            "Administratif",
-            "Mediation Culturelle",
-            "Pret"});
-            this.cbbService.Location = new System.Drawing.Point(393, 374);
+            this.cbbService.Location = new System.Drawing.Point(394, 393);
             this.cbbService.Name = "cbbService";
             this.cbbService.Size = new System.Drawing.Size(152, 26);
             this.cbbService.TabIndex = 13;
             // 
             // btnAjouterPersonnel
             // 
-            this.btnAjouterPersonnel.Location = new System.Drawing.Point(121, 439);
+            this.btnAjouterPersonnel.Location = new System.Drawing.Point(25, 327);
             this.btnAjouterPersonnel.Name = "btnAjouterPersonnel";
             this.btnAjouterPersonnel.Size = new System.Drawing.Size(182, 23);
             this.btnAjouterPersonnel.TabIndex = 14;
             this.btnAjouterPersonnel.Text = "Ajouter au personnel";
             this.btnAjouterPersonnel.UseVisualStyleBackColor = true;
+            this.btnAjouterPersonnel.Click += new System.EventHandler(this.btnAjouterPersonnel_Click);
+            // 
+            // dgvPersonnel
+            // 
+            this.dgvPersonnel.AllowUserToAddRows = false;
+            this.dgvPersonnel.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPersonnel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonnel.Location = new System.Drawing.Point(26, 12);
+            this.dgvPersonnel.Name = "dgvPersonnel";
+            this.dgvPersonnel.ReadOnly = true;
+            this.dgvPersonnel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvPersonnel.Size = new System.Drawing.Size(706, 276);
+            this.dgvPersonnel.TabIndex = 15;
+            // 
+            // btnEnregistrerPersonnel
+            // 
+            this.btnEnregistrerPersonnel.Location = new System.Drawing.Point(122, 449);
+            this.btnEnregistrerPersonnel.Name = "btnEnregistrerPersonnel";
+            this.btnEnregistrerPersonnel.Size = new System.Drawing.Size(182, 23);
+            this.btnEnregistrerPersonnel.TabIndex = 16;
+            this.btnEnregistrerPersonnel.Text = "Enregistrer au personnel";
+            this.btnEnregistrerPersonnel.UseVisualStyleBackColor = true;
+            this.btnEnregistrerPersonnel.Click += new System.EventHandler(this.btnEnregistrerPersonnel_Click);
+            // 
+            // btnAnnulerAjout
+            // 
+            this.btnAnnulerAjout.Location = new System.Drawing.Point(394, 449);
+            this.btnAnnulerAjout.Name = "btnAnnulerAjout";
+            this.btnAnnulerAjout.Size = new System.Drawing.Size(152, 23);
+            this.btnAnnulerAjout.TabIndex = 17;
+            this.btnAnnulerAjout.Text = "Annuler";
+            this.btnAnnulerAjout.UseVisualStyleBackColor = true;
+            this.btnAnnulerAjout.Click += new System.EventHandler(this.btnAnnulerAjout_Click);
             // 
             // frmListePersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 506);
+            this.Controls.Add(this.btnAnnulerAjout);
+            this.Controls.Add(this.btnEnregistrerPersonnel);
+            this.Controls.Add(this.dgvPersonnel);
             this.Controls.Add(this.btnAjouterPersonnel);
             this.Controls.Add(this.cbbService);
             this.Controls.Add(this.lblService);
@@ -203,17 +239,15 @@
             this.Controls.Add(this.btnGererAbsence);
             this.Controls.Add(this.btnModifPersonnel);
             this.Controls.Add(this.btnSupPersonnel);
-            this.Controls.Add(this.lstListePersonnel);
             this.Name = "frmListePersonnel";
             this.Text = "Liste Personnel";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstListePersonnel;
         private System.Windows.Forms.Button btnSupPersonnel;
         private System.Windows.Forms.Button btnModifPersonnel;
         private System.Windows.Forms.Button btnGererAbsence;
@@ -228,5 +262,8 @@
         private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.ComboBox cbbService;
         private System.Windows.Forms.Button btnAjouterPersonnel;
+        private System.Windows.Forms.DataGridView dgvPersonnel;
+        private System.Windows.Forms.Button btnEnregistrerPersonnel;
+        private System.Windows.Forms.Button btnAnnulerAjout;
     }
 }

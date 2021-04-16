@@ -22,6 +22,6 @@ namespace MediaTek86.vue
             InitializeComponent();
         }
 
-    
+
     }
 }
