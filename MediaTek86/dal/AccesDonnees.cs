@@ -74,6 +74,19 @@ namespace MediaTek86.dal
             conn.ReqUpdate(req, parameters);
         }
 
+        /// <summary>
+        /// Suppression d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet developpeur à supprimer</param>
+        public static void DelPersonnel(Personnel personnel)
+        {
+            string req = "delete from personnel where idpersonnel = @idpersonnel;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", personnel.Idpersonnel);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+        }
+
     }
 
 }

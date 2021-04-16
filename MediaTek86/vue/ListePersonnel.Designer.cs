@@ -57,6 +57,7 @@
             this.btnSupPersonnel.TabIndex = 1;
             this.btnSupPersonnel.Text = "Supprimer du personnel";
             this.btnSupPersonnel.UseVisualStyleBackColor = true;
+            this.btnSupPersonnel.Click += new System.EventHandler(this.btnSupPersonnel_Click);
             // 
             // btnModifPersonnel
             // 

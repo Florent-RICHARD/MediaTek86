@@ -54,5 +54,14 @@ namespace MediaTek86.controle
         {
             AccesDonnees.AddPersonnel(personnel);
         }
+
+        /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
+        public void DelPersonnel(Personnel personnel)
+        {
+            AccesDonnees.DelPersonnel(personnel);
+        }
     }
 }
