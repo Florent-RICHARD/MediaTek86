@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CDB42E81-CCDE-41BD-9918-06261E142147}</ProjectGuid>
+    <ProjectGuid>{60872AAE-2A8E-4BC4-88CD-FE03073E119A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MediaTek86</RootNamespace>
     <AssemblyName>MediaTek86</AssemblyName>
@@ -46,14 +46,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="vue\ModificationAbsence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="vue\ModificationAbsence.Designer.cs">
+      <DependentUpon>ModificationAbsence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vue\GererAbsence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vue\GererAbsence.Designer.cs">
+      <DependentUpon>GererAbsence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vue\ModificationPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vue\ModificationPersonnel.Designer.cs">
+      <DependentUpon>ModificationPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vue\SeConnecter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vue\SeConnecter.Designer.cs">
+      <DependentUpon>SeConnecter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vue\ListePersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vue\ListePersonnel.Designer.cs">
+      <DependentUpon>ListePersonnel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="vue\GererAbsence.resx">
+      <DependentUpon>GererAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vue\ListePersonnel.resx">
+      <DependentUpon>ListePersonnel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +92,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="vue\ModificationAbsence.resx">
+      <DependentUpon>ModificationAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vue\ModificationPersonnel.resx">
+      <DependentUpon>ModificationPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vue\SeConnecter.resx">
+      <DependentUpon>SeConnecter.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +115,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controle\" />
+    <Folder Include="modele\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
