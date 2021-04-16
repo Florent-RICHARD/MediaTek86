@@ -12,6 +12,10 @@ namespace MediaTek86.vue
 {
     public partial class frmModificationPersonnel : Form
     {
+        /// <summary>
+        /// Initialisation des composants graphiques
+        /// Récupération du controleur
+        /// </summary>
         public frmModificationPersonnel()
         {
             InitializeComponent();

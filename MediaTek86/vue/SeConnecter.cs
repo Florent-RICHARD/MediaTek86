@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaTek86.modele;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace MediaTek86.vue
 {
     public partial class frmSeConnecter : Form
     {
+        /// <summary>
+        /// Initialisation des composants graphiques
+        /// Récupération du controleur
+        /// </summary>
         public frmSeConnecter()
         {
             InitializeComponent();
         }
+
+    
     }
 }
