@@ -19,6 +19,8 @@ namespace MediaTek86.vue
         /// </summary>
         private Controle controle;
 
+        private frmModificationPersonnel frmModificationPersonnel;
+
         /// <summary>
         /// Objet pour gérer la liste du personnel
         /// </summary>
@@ -156,6 +158,34 @@ namespace MediaTek86.vue
                     controle.DelPersonnel(personnel);
                     RemplirListePersonnel();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+        /// <summary>
+        /// Affiche la fenêtre pour modifier un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModifPersonnel_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                // Ferme la fenêtre active
+                this.Hide();
+                frmModificationPersonnel = new frmModificationPersonnel(controle);
+                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
+                frmModificationPersonnel.idpersonnel = personnel.Idpersonnel;
+                frmModificationPersonnel.nom = personnel.Nom;
+                frmModificationPersonnel.prenom = personnel.Prenom;
+                frmModificationPersonnel.tel = personnel.Tel;
+                frmModificationPersonnel.mail = personnel.Mail;
+                frmModificationPersonnel.service = personnel.Service;
+                // Ouvre la fenêtre frmModificationPersonnel
+                frmModificationPersonnel.ShowDialog();
             }
             else
             {

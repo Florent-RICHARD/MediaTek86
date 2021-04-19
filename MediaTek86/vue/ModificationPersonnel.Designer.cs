@@ -61,6 +61,7 @@
             this.btnEnregistrerModif.TabIndex = 25;
             this.btnEnregistrerModif.Text = "Enregistrer les modifications";
             this.btnEnregistrerModif.UseVisualStyleBackColor = true;
+            this.btnEnregistrerModif.Click += new System.EventHandler(this.btnEnregistrerModif_Click);
             // 
             // cbbService
             // 
@@ -165,6 +166,7 @@
             this.btnAnnulerModif.TabIndex = 26;
             this.btnAnnulerModif.Text = "Annuler les modifications";
             this.btnAnnulerModif.UseVisualStyleBackColor = true;
+            this.btnAnnulerModif.Click += new System.EventHandler(this.btnAnnulerModif_Click);
             // 
             // frmModificationPersonnel
             // 
@@ -186,6 +188,7 @@
             this.Controls.Add(this.lblDescription);
             this.Name = "frmModificationPersonnel";
             this.Text = "Modification du personnel";
+            this.Load += new System.EventHandler(this.frmModificationPersonnel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

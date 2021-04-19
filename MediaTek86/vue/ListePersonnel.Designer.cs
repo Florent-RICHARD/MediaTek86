@@ -67,6 +67,7 @@
             this.btnModifPersonnel.TabIndex = 2;
             this.btnModifPersonnel.Text = "Modifier le personnel";
             this.btnModifPersonnel.UseVisualStyleBackColor = true;
+            this.btnModifPersonnel.Click += new System.EventHandler(this.btnModifPersonnel_Click);
             // 
             // btnGererAbsence
             // 
