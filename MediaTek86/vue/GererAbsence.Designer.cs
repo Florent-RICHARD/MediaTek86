@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAjouterAbsence = new System.Windows.Forms.Button();
             this.cbbMotif = new System.Windows.Forms.ComboBox();
             this.txtDateDebut = new System.Windows.Forms.TextBox();
@@ -38,7 +39,12 @@
             this.btnRetourListePerso = new System.Windows.Forms.Button();
             this.btnModifAbsence = new System.Windows.Forms.Button();
             this.btnSupAbsence = new System.Windows.Forms.Button();
-            this.lstLAbsence = new System.Windows.Forms.ListBox();
+            this.dgvAbsence = new System.Windows.Forms.DataGridView();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.lblPrenom = new System.Windows.Forms.Label();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAbsence)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAjouterAbsence
@@ -54,11 +60,6 @@
             // 
             this.cbbMotif.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.cbbMotif.FormattingEnabled = true;
-            this.cbbMotif.Items.AddRange(new object[] {
-            "Vacances",
-            "Maladie",
-            "Motif familial",
-            "Conge parental"});
             this.cbbMotif.Location = new System.Drawing.Point(152, 419);
             this.cbbMotif.Name = "cbbMotif";
             this.cbbMotif.Size = new System.Drawing.Size(152, 26);
@@ -137,19 +138,72 @@
             this.btnSupAbsence.Text = "Supprimer l\'absence";
             this.btnSupAbsence.UseVisualStyleBackColor = true;
             // 
-            // lstLAbsence
+            // dgvAbsence
             // 
-            this.lstLAbsence.FormattingEnabled = true;
-            this.lstLAbsence.Location = new System.Drawing.Point(31, 28);
-            this.lstLAbsence.Name = "lstLAbsence";
-            this.lstLAbsence.Size = new System.Drawing.Size(707, 277);
-            this.lstLAbsence.TabIndex = 15;
+            this.dgvAbsence.AllowUserToAddRows = false;
+            this.dgvAbsence.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAbsence.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAbsence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAbsence.Location = new System.Drawing.Point(32, 33);
+            this.dgvAbsence.Name = "dgvAbsence";
+            this.dgvAbsence.ReadOnly = true;
+            this.dgvAbsence.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvAbsence.Size = new System.Drawing.Size(706, 276);
+            this.dgvAbsence.TabIndex = 30;
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNom.Location = new System.Drawing.Point(28, 9);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(54, 19);
+            this.lblNom.TabIndex = 31;
+            this.lblNom.Text = "Nom :";
+            // 
+            // txtNom
+            // 
+            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNom.Location = new System.Drawing.Point(88, 7);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(113, 24);
+            this.txtNom.TabIndex = 32;
+            // 
+            // lblPrenom
+            // 
+            this.lblPrenom.AutoSize = true;
+            this.lblPrenom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrenom.Location = new System.Drawing.Point(250, 9);
+            this.lblPrenom.Name = "lblPrenom";
+            this.lblPrenom.Size = new System.Drawing.Size(75, 19);
+            this.lblPrenom.TabIndex = 33;
+            this.lblPrenom.Text = "Prenom :";
+            // 
+            // txtPrenom
+            // 
+            this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrenom.Location = new System.Drawing.Point(331, 7);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(113, 24);
+            this.txtPrenom.TabIndex = 34;
             // 
             // frmGererAbsence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 506);
+            this.Controls.Add(this.txtPrenom);
+            this.Controls.Add(this.lblPrenom);
+            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.lblNom);
+            this.Controls.Add(this.dgvAbsence);
             this.Controls.Add(this.btnAjouterAbsence);
             this.Controls.Add(this.cbbMotif);
             this.Controls.Add(this.txtDateDebut);
@@ -160,9 +214,10 @@
             this.Controls.Add(this.btnRetourListePerso);
             this.Controls.Add(this.btnModifAbsence);
             this.Controls.Add(this.btnSupAbsence);
-            this.Controls.Add(this.lstLAbsence);
             this.Name = "frmGererAbsence";
             this.Text = "Absence";
+            this.Load += new System.EventHandler(this.frmGererAbsence_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAbsence)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +235,10 @@
         private System.Windows.Forms.Button btnRetourListePerso;
         private System.Windows.Forms.Button btnModifAbsence;
         private System.Windows.Forms.Button btnSupAbsence;
-        private System.Windows.Forms.ListBox lstLAbsence;
+        private System.Windows.Forms.DataGridView dgvAbsence;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.Label lblPrenom;
+        private System.Windows.Forms.TextBox txtPrenom;
     }
 }

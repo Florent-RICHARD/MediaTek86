@@ -67,10 +67,6 @@
             // 
             this.cbbService.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.cbbService.FormattingEnabled = true;
-            this.cbbService.Items.AddRange(new object[] {
-            "Administratif",
-            "Mediation Culturelle",
-            "Pret"});
             this.cbbService.Location = new System.Drawing.Point(398, 70);
             this.cbbService.Name = "cbbService";
             this.cbbService.Size = new System.Drawing.Size(152, 26);

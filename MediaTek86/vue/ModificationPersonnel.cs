@@ -1,5 +1,4 @@
 ﻿using MediaTek86.controle;
-using MediaTek86.modele;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +30,7 @@ namespace MediaTek86.vue
         /// <summary>
         /// Objet pour gérer la liste des profils
         /// </summary>
-        BindingSource bdgService = new BindingSource();
+        public BindingSource bdgService = new BindingSource();
 
         /// <summary>
         /// Initialisation des composants graphiques
@@ -57,8 +56,7 @@ namespace MediaTek86.vue
         /// </summary>
         public void RemplirListeService()
         {
-            List<Service> lesServices = controle.GetLesServices();
-            bdgService.DataSource = lesServices;
+            controle.GetLesServices(bdgService);
             cbbService.DataSource = bdgService;
             if (cbbService.Items.Count > 0)
             {
@@ -103,13 +101,7 @@ namespace MediaTek86.vue
             {
                 if (MessageBox.Show("Voulez-vous vraiment enregistrer ?", "Confirmation d'enregistrement", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    Service service = (Service)bdgService.List[bdgService.Position];
-                    Personnel personnel = new Personnel(this.idpersonnel, txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text, service.Idservice, service.Nom);
-                    controle.UpdatePersonnel(personnel);
-                    Console.WriteLine(personnel.Idpersonnel);
-                    this.Hide();
-                    frmListePersonnel = new frmListePersonnel(controle);
-                    frmListePersonnel.ShowDialog();
+                    controle.EnrUpdatePersonnel(txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text);
                 }
                 
             }

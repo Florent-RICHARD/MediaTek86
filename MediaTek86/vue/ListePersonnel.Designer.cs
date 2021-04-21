@@ -77,6 +77,7 @@
             this.btnGererAbsence.TabIndex = 3;
             this.btnGererAbsence.Text = "Gérer les absences";
             this.btnGererAbsence.UseVisualStyleBackColor = true;
+            this.btnGererAbsence.Click += new System.EventHandler(this.btnGererAbsence_Click);
             // 
             // lblNom
             // 

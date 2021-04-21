@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MediaTek86.modele;
 using MediaTek86.controle;
 
 namespace MediaTek86.vue
@@ -19,7 +18,10 @@ namespace MediaTek86.vue
         /// </summary>
         private Controle controle;
 
-        private frmModificationPersonnel frmModificationPersonnel;
+        /// <summary>
+        /// instance de frmGererAbsence
+        /// </summary>
+        public frmGererAbsence frmGererAbsence;
 
         /// <summary>
         /// Objet pour gérer la liste du personnel
@@ -65,7 +67,6 @@ namespace MediaTek86.vue
             txtPrenom.Text = "";
             txtTel.Text = "";
             txtMail.Text = "";
-
         }
 
         /// <summary>
@@ -79,12 +80,11 @@ namespace MediaTek86.vue
         }
 
         /// <summary>
-        /// Affiche le personnel
+        /// Remplis et affiche le personnel
         /// </summary>
         public void RemplirListePersonnel()
         {
-            List<Personnel> lesPersonnels = controle.GetLesPersonnels();
-            bdgPersonnel.DataSource = lesPersonnels;
+            controle.GetLesPersonnels(bdgPersonnel);
             dgvPersonnel.DataSource = bdgPersonnel;
             dgvPersonnel.Columns["idpersonnel"].Visible = false;
             dgvPersonnel.Columns["idservice"].Visible = false;
@@ -92,12 +92,11 @@ namespace MediaTek86.vue
         }
 
         /// <summary>
-        /// Affiche les services
+        /// Remplis et affiche les services
         /// </summary>
         public void RemplirListeService()
         {
-            List<Service> lesServices = controle.GetLesServices();
-            bdgService.DataSource = lesServices;
+            controle.GetLesServices(bdgService);
             cbbService.DataSource = bdgService;
             if (cbbService.Items.Count > 0)
             {
@@ -105,6 +104,11 @@ namespace MediaTek86.vue
             }
         }
 
+        /// <summary>
+        /// Affiche les zones de textes pour ajouter un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAjouterPersonnel_Click(object sender, EventArgs e)
         {
             GererZoneTexte(true);
@@ -130,10 +134,7 @@ namespace MediaTek86.vue
         {
             if (!txtNom.Text.Equals("") && !txtPrenom.Text.Equals("") && !txtTel.Text.Equals("") && !txtMail.Text.Equals("") && cbbService.SelectedIndex != -1)
             {
-                Service service = (Service)bdgService.List[bdgService.Position];
-                int idpersonnel = 0;
-                Personnel personnel = new Personnel(idpersonnel, txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text, service.Idservice, service.Nom);
-                controle.AddDeveloppeur(personnel);
+                controle.AddDeveloppeur(txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text);
                 RemplirListePersonnel();
                 ViderZoneTexte();
             }
@@ -152,12 +153,8 @@ namespace MediaTek86.vue
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
             {
-                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
-                if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    controle.DelPersonnel(personnel);
-                    RemplirListePersonnel();
-                }
+                controle.DelPersonnel();
+                RemplirListePersonnel();
             }
             else
             {
@@ -166,7 +163,7 @@ namespace MediaTek86.vue
         }
 
         /// <summary>
-        /// Affiche la fenêtre pour modifier un personnel
+        /// Bouton pour demander la modification d'un personnel
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -174,18 +171,24 @@ namespace MediaTek86.vue
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
             {
-                // Ferme la fenêtre active
-                this.Hide();
-                frmModificationPersonnel = new frmModificationPersonnel(controle);
-                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
-                frmModificationPersonnel.idpersonnel = personnel.Idpersonnel;
-                frmModificationPersonnel.nom = personnel.Nom;
-                frmModificationPersonnel.prenom = personnel.Prenom;
-                frmModificationPersonnel.tel = personnel.Tel;
-                frmModificationPersonnel.mail = personnel.Mail;
-                frmModificationPersonnel.service = personnel.Service;
-                // Ouvre la fenêtre frmModificationPersonnel
-                frmModificationPersonnel.ShowDialog();
+                controle.DemUpdatePersonnel();
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+        /// <summary>
+        /// Ouvre la fenêtre de gestion des absences du personnel sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGererAbsence_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                controle.DemGererAbsence();
             }
             else
             {

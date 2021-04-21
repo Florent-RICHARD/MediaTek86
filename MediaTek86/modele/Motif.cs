@@ -15,6 +15,9 @@ namespace MediaTek86.modele
         private int idmotif;
         private string libelle;
 
+        public int Idmotif { get => idmotif; }
+        public string Libelle { get => libelle; }
+
         /// <summary>
         /// Constructeur : valorise les propriétés
         /// </summary>
@@ -24,6 +27,15 @@ namespace MediaTek86.modele
         {
             this.idmotif = idmotif;
             this.libelle = libelle;
+        }
+
+        /// <summary>
+        /// Définit l'information à afficher (juste le libelle)
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.libelle;
         }
     }
 }

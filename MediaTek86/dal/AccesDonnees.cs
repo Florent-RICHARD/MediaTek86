@@ -57,6 +57,50 @@ namespace MediaTek86.dal
         }
 
         /// <summary>
+        /// Récupère et retourne les absences d'un personnel provenant de la BDD
+        /// </summary>
+        /// <param name="personnel"></param>
+        /// <returns></returns>
+        public static List<Absence> GetLesAbsences(Personnel personnel)
+        {
+            List<Absence> lesAbsences = new List<Absence>();
+            string req = "select p.idpersonnel, p.nom as nom, p.prenom as prenom, a.datedebut as datedebut, a.datefin as datefin, m.libelle as motif, m.idmotif as idmotif ";
+            req += "from personnel p JOIN absence a ON p.idpersonnel = a.idpersonnel JOIN motif m ON a.idmotif = m.idmotif ";
+            req += "where p.idpersonnel = @idpersonnel ";
+            req += "order by datedebut desc";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", personnel.Idpersonnel);
+            ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+            while (curs.Read())
+            {
+                Absence absence = new Absence((int)curs.Field("idpersonnel"), (string)curs.Field("nom"), (string)curs.Field("prenom"), (DateTime)curs.Field("datedebut"), (DateTime)curs.Field("datefin"), (int)curs.Field("idmotif"), (string)curs.Field("motif"));
+                lesAbsences.Add(absence);
+            }
+            curs.Close();
+            return lesAbsences;
+        }
+
+        /// <summary>
+        /// Récupère et retourne les motifs provenant de la BDD
+        /// </summary>
+        /// <returns></returns>
+        public static List<Motif> GetLesMotifs()
+        {
+            List<Motif> lesMotifs = new List<Motif>();
+            string req = "select * from motif order by libelle";
+            ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+            while (curs.Read())
+            {
+                Motif motif = new Motif((int)curs.Field("idmotif"), (string)curs.Field("libelle"));
+                lesMotifs.Add(motif);
+            }
+            curs.Close();
+            return lesMotifs;
+        }
+
+        /// <summary>
         /// Ajoute un personnel
         /// </summary>
         /// <param name="personnel"></param>
