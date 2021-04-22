@@ -19,11 +19,6 @@ namespace MediaTek86.vue
         private Controle controle;
 
         /// <summary>
-        /// instance de frmGererAbsence
-        /// </summary>
-        public frmGererAbsence frmGererAbsence;
-
-        /// <summary>
         /// Objet pour gérer la liste du personnel
         /// </summary>
         public BindingSource bdgPersonnel = new BindingSource();
@@ -188,6 +183,7 @@ namespace MediaTek86.vue
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
             {
+                this.Hide();
                 controle.DemGererAbsence();
             }
             else

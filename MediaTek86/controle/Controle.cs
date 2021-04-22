@@ -86,13 +86,15 @@ namespace MediaTek86.controle
         public void DemGererAbsence()
         {
             Personnel personnel = (Personnel)frmListePersonnel.bdgPersonnel.List[frmListePersonnel.bdgPersonnel.Position];
-            frmListePersonnel.Hide();
             frmGererAbsence = new frmGererAbsence(this);
             frmGererAbsence.RemplirListeAbsence(personnel);
             frmGererAbsence.SetNom(personnel.Nom);
             frmGererAbsence.SetPrenom(personnel.Prenom);
             frmGererAbsence.SetIdPersonnel(personnel.Idpersonnel);
+            Console.WriteLine("Nom :" + personnel.Nom);
+            Console.WriteLine("Prenom :" + personnel.Prenom);
             frmGererAbsence.ShowDialog();
+
         }
 
         /// <summary>
@@ -131,14 +133,34 @@ namespace MediaTek86.controle
             frmListePersonnel.Hide();
             frmModificationPersonnel = new frmModificationPersonnel(this);
             Personnel personnel = (Personnel)frmListePersonnel.bdgPersonnel.List[frmListePersonnel.bdgPersonnel.Position];
-            frmModificationPersonnel.idpersonnel = personnel.Idpersonnel;
-            frmModificationPersonnel.nom = personnel.Nom;
-            frmModificationPersonnel.prenom = personnel.Prenom;
-            frmModificationPersonnel.tel = personnel.Tel;
-            frmModificationPersonnel.mail = personnel.Mail;
-            frmModificationPersonnel.service = personnel.Service;
+            frmModificationPersonnel.SetIdPersonnel(personnel.Idpersonnel);
+            frmModificationPersonnel.SetNom(personnel.Nom);
+            frmModificationPersonnel.SetPrenom(personnel.Prenom);
+            frmModificationPersonnel.SetTel(personnel.Tel);
+            frmModificationPersonnel.SetMail(personnel.Mail);
+            frmModificationPersonnel.SetService(personnel.Service);
             // Ouvre la fenêtre frmModificationPersonnel
             frmModificationPersonnel.ShowDialog();
+        }
+        
+        /// <summary>
+        /// Demande pour annule la modification d'un personnel 
+        /// </summary>
+        public void AnnulerUpdatePersonnel()
+        {
+            frmModificationPersonnel.Hide();
+            frmListePersonnel = new frmListePersonnel(this);
+            frmListePersonnel.ShowDialog();
+        }
+
+        /// <summary>
+        /// Demande pour retourner à la liste des personnels
+        /// </summary>
+        public void RetourListePerso()
+        {
+            frmGererAbsence.Hide();
+            frmListePersonnel = new frmListePersonnel(this);
+            frmListePersonnel.ShowDialog();
         }
 
         /// <summary>
@@ -151,7 +173,7 @@ namespace MediaTek86.controle
         public void EnrUpdatePersonnel(string nom, string prenom, string tel, string mail)
         {
             Service service = (Service)frmModificationPersonnel.bdgService.List[frmModificationPersonnel.bdgService.Position];
-            Personnel personnel = new Personnel(frmModificationPersonnel.idpersonnel, nom, prenom, tel, mail, service.Idservice, service.Nom);
+            Personnel personnel = new Personnel(frmModificationPersonnel.GetIdPersonnel(), nom, prenom, tel, mail, service.Idservice, service.Nom);
             AccesDonnees.UpdatePersonnel(personnel);
             frmModificationPersonnel.Hide();
             frmListePersonnel = new frmListePersonnel(this);

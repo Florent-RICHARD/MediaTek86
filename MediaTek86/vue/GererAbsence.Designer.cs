@@ -119,6 +119,7 @@
             this.btnRetourListePerso.TabIndex = 18;
             this.btnRetourListePerso.Text = "Retour à la liste du personnel";
             this.btnRetourListePerso.UseVisualStyleBackColor = true;
+            this.btnRetourListePerso.Click += new System.EventHandler(this.btnRetourListePerso_Click);
             // 
             // btnModifAbsence
             // 

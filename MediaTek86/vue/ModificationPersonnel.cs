@@ -14,15 +14,110 @@ namespace MediaTek86.vue
     public partial class frmModificationPersonnel : Form
     {
         // Déclaration des propriétés
-        public int idpersonnel;
-        public string nom;
-        public string prenom;
-        public string tel;
-        public string mail;
-        public string service;
+        private int idpersonnel;
+        private string nom;
+        private string prenom;
+        private string tel;
+        private string mail;
+        private string service;
 
-        private frmListePersonnel frmListePersonnel;
-
+        /// <summary>
+        /// Permet de changer la valeur de idpersonnel
+        /// </summary>
+        /// <param name="idpersonnel"></param>
+        public void SetIdPersonnel(int idpersonnel)
+        {
+            this.idpersonnel = idpersonnel;
+        }
+        /// <summary>
+        /// Retourne idpersonnel
+        /// </summary>
+        /// <returns></returns>
+        public int GetIdPersonnel()
+        {
+            return idpersonnel;
+        }
+        /// <summary>
+        /// Permet de changer la valeur de nom
+        /// </summary>
+        /// <param name="nom"></param>
+        public void SetNom(string nom)
+        {
+            this.nom = nom;
+        }
+        /// <summary>
+        /// Retourne nom
+        /// </summary>
+        /// <returns></returns>
+        public string GetNom()
+        {
+            return nom;
+        }
+        /// <summary>
+        /// Permet de changer la valeur de prenom
+        /// </summary>
+        /// <param name="prenom"></param>
+        public void SetPrenom(string prenom)
+        {
+            this.prenom = prenom;
+        }
+        /// <summary>
+        /// Retourne prenom
+        /// </summary>
+        /// <returns></returns>
+        public string Getprenom()
+        {
+            return prenom;
+        }
+        /// <summary>
+        /// Permet de changer la valeur de tel
+        /// </summary>
+        /// <param name="tel"></param>
+        public void SetTel(string tel)
+        {
+            this.tel = tel;
+        }
+        /// <summary>
+        /// Retourne tel
+        /// </summary>
+        /// <returns></returns>
+        public string GetTel()
+        {
+            return tel;
+        }
+        /// <summary>
+        /// Permet de changer la valeur de mail
+        /// </summary>
+        /// <param name="mail"></param>
+        public void SetMail(string mail)
+        {
+            this.mail = mail;
+        }
+        /// <summary>
+        /// Retourne mail
+        /// </summary>
+        /// <returns></returns>
+        public string GetMail()
+        {
+            return mail;
+        }
+        /// <summary>
+        /// Permet de changer la valeur de service
+        /// </summary>
+        /// <param name="service"></param>
+        public void SetService(string service)
+        {
+            this.service = service;
+        }
+        /// <summary>
+        /// Retourne service
+        /// </summary>
+        /// <returns></returns>
+        public string GetService()
+        {
+            return service;
+        }
+        
         /// <summary>
         /// instance du controleur
         /// </summary>
@@ -85,9 +180,7 @@ namespace MediaTek86.vue
         /// <param name="e"></param>
         private void btnAnnulerModif_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmListePersonnel = new frmListePersonnel(controle);
-            frmListePersonnel.ShowDialog();
+            controle.AnnulerUpdatePersonnel();
         }
 
         /// <summary>

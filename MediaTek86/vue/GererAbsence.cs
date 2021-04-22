@@ -153,5 +153,9 @@ namespace MediaTek86.vue
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
+        private void btnRetourListePerso_Click(object sender, EventArgs e)
+        {
+            controle.RetourListePerso();
+        }
     }
 }
