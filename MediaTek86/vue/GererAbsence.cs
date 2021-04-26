@@ -137,6 +137,11 @@ namespace MediaTek86.vue
             GererZoneTexte(false);
         }
 
+        /// <summary>
+        /// Remplis les zones de texte au chargement de la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmGererAbsence_Load(object sender, EventArgs e)
         {
             txtNom.Text = GetNom();
@@ -170,6 +175,11 @@ namespace MediaTek86.vue
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
+        /// <summary>
+        /// Retourne à la liste du personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRetourListePerso_Click(object sender, EventArgs e)
         {
             controle.RetourListePerso();
@@ -212,5 +222,21 @@ namespace MediaTek86.vue
             GererZoneTexte(false);
         }
 
+        /// <summary>
+        /// Suuprime l'absence séléctionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSupAbsence_Click(object sender, EventArgs e)
+        {
+            if (dgvAbsence.SelectedRows.Count > 0)
+            {
+                controle.DelAbsence();
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
     }
 }

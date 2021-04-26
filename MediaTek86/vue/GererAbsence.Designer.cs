@@ -125,6 +125,7 @@
             this.btnSupAbsence.TabIndex = 16;
             this.btnSupAbsence.Text = "Supprimer l\'absence";
             this.btnSupAbsence.UseVisualStyleBackColor = true;
+            this.btnSupAbsence.Click += new System.EventHandler(this.btnSupAbsence_Click);
             // 
             // dgvAbsence
             // 

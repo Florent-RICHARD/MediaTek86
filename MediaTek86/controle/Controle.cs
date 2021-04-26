@@ -193,5 +193,21 @@ namespace MediaTek86.controle
             AccesDonnees.AddAbsence(absence);
             frmGererAbsence.RemplirListeAbsence(personnel);
         }
+
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
+        public void DelAbsence()
+        {
+            Absence absence = (Absence)frmGererAbsence.bdgAbsence.List[frmGererAbsence.bdgAbsence.Position];
+            Personnel personnel = new Personnel(frmGererAbsence.GetIdPersonnel(), null, null, null, null, 0, null);
+            if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                AccesDonnees.DelAbsence(absence);
+                frmGererAbsence.RemplirListeAbsence(personnel);
+            }
+            
+        }
     }
 }
