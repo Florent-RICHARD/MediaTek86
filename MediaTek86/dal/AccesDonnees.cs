@@ -150,6 +150,23 @@ namespace MediaTek86.dal
             conn.ReqUpdate(req, parameters);
         }
 
+        /// <summary>
+        /// Ajout d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
+        public static void AddAbsence(Absence absence)
+        {
+            string req = "insert into absence(idpersonnel, datedebut, datefin, idmotif) ";
+            req += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", absence.Idpersonnel);
+            parameters.Add("@datedebut", absence.Date_de_debut);
+            parameters.Add("@datefin", absence.Date_de_fin);
+            parameters.Add("@idmotif", absence.Idmotif);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+        }
+
     }
 
 }

@@ -179,5 +179,19 @@ namespace MediaTek86.controle
             frmListePersonnel = new frmListePersonnel(this);
             frmListePersonnel.ShowDialog();
         }
+
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
+        public void AddAbsence(int idpersonnel, string nom, string prenom, DateTime datedebut, DateTime datefin)
+        {
+            Console.WriteLine(frmGererAbsence.GetIdPersonnel());
+            Motif motif = (Motif)frmGererAbsence.bdgMotif.List[frmGererAbsence.bdgMotif.Position];
+            Personnel personnel = new Personnel(frmGererAbsence.GetIdPersonnel(), null, null, null, null, 0, null);
+            Absence absence = new Absence(idpersonnel, nom, prenom, datedebut, datefin, motif.Idmotif, motif.Libelle);
+            AccesDonnees.AddAbsence(absence);
+            frmGererAbsence.RemplirListeAbsence(personnel);
+        }
     }
 }

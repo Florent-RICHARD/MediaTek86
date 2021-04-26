@@ -111,6 +111,22 @@ namespace MediaTek86.vue
         }
 
         /// <summary>
+        /// Affiche ou non les zones de texte pour ajouter une absence
+        /// </summary>
+        /// <param name="boolean"></param>
+        public void GererZoneTexte(Boolean boolean)
+        {
+            lblDateDebut.Visible = boolean;
+            lblDateFin.Visible = boolean;
+            lblMotif.Visible = boolean;
+            dtpDateDebut.Visible = boolean;
+            dtpDateFin.Visible = boolean;
+            cbbMotif.Visible = boolean;
+            btnEnregistrerAbsence.Visible = boolean;
+            btnAnnulerAjout.Visible = boolean;
+        }
+
+        /// <summary>
         /// Initialisation de la frame : remplissage des listes
         /// </summary>
         public void Init()
@@ -118,6 +134,7 @@ namespace MediaTek86.vue
             RemplirListeMotif();
             txtNom.Enabled = false;
             txtPrenom.Enabled = false;
+            GererZoneTexte(false);
         }
 
         private void frmGererAbsence_Load(object sender, EventArgs e)
@@ -157,5 +174,43 @@ namespace MediaTek86.vue
         {
             controle.RetourListePerso();
         }
+
+        /// <summary>
+        /// Enregistre et ajoute une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEnregistrerAbsence_Click(object sender, EventArgs e)
+        {
+            if (cbbMotif.SelectedIndex != -1)
+            {
+                controle.AddAbsence(GetIdPersonnel(), GetNom(), GetPrenom(), dtpDateDebut.Value, dtpDateFin.Value);
+            }
+            else
+            {
+                MessageBox.Show("Tous les champs doivent être remplis.", "Information");
+            }
+        }
+
+        /// <summary>
+        /// Affiche les zones de textes pour ajouter une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAjouterAbsence_Click_1(object sender, EventArgs e)
+        {
+            GererZoneTexte(true);
+        }
+
+        /// <summary>
+        /// Annule l'ajout d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAnnulerAjout_Click(object sender, EventArgs e)
+        {
+            GererZoneTexte(false);
+        }
+
     }
 }
