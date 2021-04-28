@@ -116,6 +116,7 @@
             this.btnModifAbsence.TabIndex = 17;
             this.btnModifAbsence.Text = "Modifier l\'absence";
             this.btnModifAbsence.UseVisualStyleBackColor = true;
+            this.btnModifAbsence.Click += new System.EventHandler(this.btnModifAbsence_Click);
             // 
             // btnSupAbsence
             // 

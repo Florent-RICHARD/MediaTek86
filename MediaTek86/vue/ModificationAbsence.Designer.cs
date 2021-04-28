@@ -32,8 +32,6 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.cbbMotif = new System.Windows.Forms.ComboBox();
-            this.txtDateDebut = new System.Windows.Forms.TextBox();
-            this.txtDateFin = new System.Windows.Forms.TextBox();
             this.lblMotif = new System.Windows.Forms.Label();
             this.lblDateFin = new System.Windows.Forms.Label();
             this.lblDateDebut = new System.Windows.Forms.Label();
@@ -42,6 +40,8 @@
             this.txtNom = new System.Windows.Forms.TextBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.dtpDateDebut = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblMail
@@ -71,6 +71,7 @@
             this.btnEnregistrer.TabIndex = 37;
             this.btnEnregistrer.Text = "Enregistrer les modifications";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // cbbMotif
             // 
@@ -85,22 +86,6 @@
             this.cbbMotif.Name = "cbbMotif";
             this.cbbMotif.Size = new System.Drawing.Size(152, 26);
             this.cbbMotif.TabIndex = 36;
-            // 
-            // txtDateDebut
-            // 
-            this.txtDateDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateDebut.Location = new System.Drawing.Point(138, 82);
-            this.txtDateDebut.Name = "txtDateDebut";
-            this.txtDateDebut.Size = new System.Drawing.Size(113, 24);
-            this.txtDateDebut.TabIndex = 35;
-            // 
-            // txtDateFin
-            // 
-            this.txtDateFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateFin.Location = new System.Drawing.Point(138, 110);
-            this.txtDateFin.Name = "txtDateFin";
-            this.txtDateFin.Size = new System.Drawing.Size(113, 24);
-            this.txtDateFin.TabIndex = 34;
             // 
             // lblMotif
             // 
@@ -176,12 +161,29 @@
             this.btnAnnuler.TabIndex = 42;
             this.btnAnnuler.Text = "Annuler les modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            // 
+            // dtpDateDebut
+            // 
+            this.dtpDateDebut.Location = new System.Drawing.Point(138, 84);
+            this.dtpDateDebut.Name = "dtpDateDebut";
+            this.dtpDateDebut.Size = new System.Drawing.Size(173, 20);
+            this.dtpDateDebut.TabIndex = 43;
+            // 
+            // dtpDateFin
+            // 
+            this.dtpDateFin.Location = new System.Drawing.Point(138, 112);
+            this.dtpDateFin.Name = "dtpDateFin";
+            this.dtpDateFin.Size = new System.Drawing.Size(173, 20);
+            this.dtpDateFin.TabIndex = 44;
             // 
             // frmModificationAbsence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 226);
+            this.Controls.Add(this.dtpDateFin);
+            this.Controls.Add(this.dtpDateDebut);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.lblPrenom);
@@ -189,8 +191,6 @@
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.cbbMotif);
-            this.Controls.Add(this.txtDateDebut);
-            this.Controls.Add(this.txtDateFin);
             this.Controls.Add(this.lblMotif);
             this.Controls.Add(this.lblDateFin);
             this.Controls.Add(this.lblDateDebut);
@@ -198,6 +198,7 @@
             this.Controls.Add(this.lblDescription);
             this.Name = "frmModificationAbsence";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmModificationAbsence_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,8 +209,6 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.ComboBox cbbMotif;
-        private System.Windows.Forms.TextBox txtDateDebut;
-        private System.Windows.Forms.TextBox txtDateFin;
         private System.Windows.Forms.Label lblMotif;
         private System.Windows.Forms.Label lblDateFin;
         private System.Windows.Forms.Label lblDateDebut;
@@ -218,5 +217,7 @@
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.DateTimePicker dtpDateDebut;
+        private System.Windows.Forms.DateTimePicker dtpDateFin;
     }
 }

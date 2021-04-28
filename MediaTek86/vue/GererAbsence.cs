@@ -34,6 +34,8 @@ namespace MediaTek86.vue
         /// </summary>
         private Controle controle;
 
+        public frmModificationAbsence frmModificationAbsence;
+
         /// <summary>
         /// Permet de changer la valeur de idpersonnel
         /// </summary>
@@ -192,9 +194,21 @@ namespace MediaTek86.vue
         /// <param name="e"></param>
         private void btnEnregistrerAbsence_Click(object sender, EventArgs e)
         {
+            DateTime datedebut = dtpDateDebut.Value;
+            DateTime datefin = dtpDateFin.Value;
+            int result = DateTime.Compare(datedebut, datefin);
+
             if (cbbMotif.SelectedIndex != -1)
             {
-                controle.AddAbsence(GetIdPersonnel(), GetNom(), GetPrenom(), dtpDateDebut.Value, dtpDateFin.Value);
+                if (result < 0)
+                {
+                    controle.AddAbsence(GetIdPersonnel(), GetNom(), GetPrenom(), dtpDateDebut.Value, dtpDateFin.Value);
+                }
+                else
+                {
+                    MessageBox.Show("La date de début est supérieur à la date de fin", "Imformation");
+
+                }
             }
             else
             {
@@ -232,6 +246,18 @@ namespace MediaTek86.vue
             if (dgvAbsence.SelectedRows.Count > 0)
             {
                 controle.DelAbsence();
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+        private void btnModifAbsence_Click(object sender, EventArgs e)
+        {
+            if (dgvAbsence.SelectedRows.Count > 0)
+            {
+                controle.DemUpdateAbsence();
             }
             else
             {

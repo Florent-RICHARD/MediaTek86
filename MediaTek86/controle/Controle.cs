@@ -26,9 +26,19 @@ namespace MediaTek86.controle
         private frmModificationPersonnel frmModificationPersonnel;
 
         /// <summary>
+        /// instance de frmModificationAbsence
+        /// </summary>
+        private frmModificationAbsence frmModificationAbsence;
+
+        /// <summary>
         /// instance de frmGererAbsence
         /// </summary>
         private frmGererAbsence frmGererAbsence;
+
+        /// <summary>
+        /// Permet de sauvegarder le personnel séléctionné auparavant
+        /// </summary>
+        private Personnel savePersonnel;
 
         /// <summary>
         /// Ouverture de la fenêtre
@@ -86,6 +96,7 @@ namespace MediaTek86.controle
         public void DemGererAbsence()
         {
             Personnel personnel = (Personnel)frmListePersonnel.bdgPersonnel.List[frmListePersonnel.bdgPersonnel.Position];
+            savePersonnel = personnel;
             frmGererAbsence = new frmGererAbsence(this);
             frmGererAbsence.RemplirListeAbsence(personnel);
             frmGererAbsence.SetNom(personnel.Nom);
@@ -142,15 +153,48 @@ namespace MediaTek86.controle
             // Ouvre la fenêtre frmModificationPersonnel
             frmModificationPersonnel.ShowDialog();
         }
+
+        public void DemUpdateAbsence()
+        {
+            // Ferme la fenêtre active
+            frmGererAbsence.Hide();
+            frmModificationAbsence = new frmModificationAbsence(this);
+            Absence absence = (Absence)frmGererAbsence.bdgAbsence.List[frmGererAbsence.bdgAbsence.Position];
+            frmModificationAbsence.SetIdPersonnel(absence.Idpersonnel);
+            frmModificationAbsence.SetNom(absence.Nom);
+            frmModificationAbsence.SetPrenom(absence.Prenom);
+            frmModificationAbsence.SetDateDebut(absence.Date_de_debut);
+            frmModificationAbsence.SetDateFin(absence.Date_de_fin);
+            frmModificationAbsence.SetIdMotif(absence.Idmotif);
+            frmModificationAbsence.SetMotif(absence.Motif);
+            // Ouvre la fenêtre frmModificationPersonnel
+            frmModificationAbsence.ShowDialog();
+        }
         
         /// <summary>
-        /// Demande pour annule la modification d'un personnel 
+        /// Demande pour annuler la modification d'un personnel 
         /// </summary>
         public void AnnulerUpdatePersonnel()
         {
             frmModificationPersonnel.Hide();
             frmListePersonnel = new frmListePersonnel(this);
             frmListePersonnel.ShowDialog();
+        }
+
+        /// <summary>
+        /// Demande pour annuler la modification d'une absence
+        /// </summary>
+        public void AnnulerUpdateAbsence()
+        {
+            frmModificationAbsence.Hide();
+            frmGererAbsence = new frmGererAbsence(this);
+            frmGererAbsence.RemplirListeAbsence(savePersonnel);
+            frmGererAbsence.SetNom(savePersonnel.Nom);
+            frmGererAbsence.SetPrenom(savePersonnel.Prenom);
+            frmGererAbsence.SetIdPersonnel(savePersonnel.Idpersonnel);
+            Console.WriteLine("Nom :" + savePersonnel.Nom);
+            Console.WriteLine("Prenom :" + savePersonnel.Prenom);
+            frmGererAbsence.ShowDialog();
         }
 
         /// <summary>
@@ -206,8 +250,27 @@ namespace MediaTek86.controle
             {
                 AccesDonnees.DelAbsence(absence);
                 frmGererAbsence.RemplirListeAbsence(personnel);
-            }
-            
+            } 
+        }
+
+        /// <summary>
+        /// Enregistre les modifications d'une absence
+        /// </summary>
+        /// <param name="datedebut"></param>
+        /// <param name="datefin"></param>
+        public void EnrUpdateAbsence(DateTime datedebut, DateTime datefin)
+        {
+            frmModificationAbsence frm = frmModificationAbsence;
+            Motif motif = (Motif)frm.bdgMotif.List[frm.bdgMotif.Position];
+            Absence absence = new Absence(frm.GetIdPersonnel(), frm.GetNom(), frm.GetPrenom(), frm.GetDateDebut(), frm.GetDateFin(), motif.Idmotif, motif.Libelle);
+            AccesDonnees.UpdateAbsence(absence, datedebut, datefin);
+            frmModificationAbsence.Hide();
+            frmGererAbsence = new frmGererAbsence(this);
+            Personnel personnel = new Personnel(frm.GetIdPersonnel(), frm.GetNom(), frm.GetPrenom(), null, null, 0, null);
+            frmGererAbsence.RemplirListeAbsence(personnel);
+            frmGererAbsence.SetNom(frmModificationAbsence.GetNom());
+            frmGererAbsence.SetPrenom(frmModificationAbsence.GetPrenom());
+            frmGererAbsence.ShowDialog();
         }
     }
 }
