@@ -64,6 +64,7 @@
             // 
             this.txtMotDePasse.Location = new System.Drawing.Point(109, 51);
             this.txtMotDePasse.Name = "txtMotDePasse";
+            this.txtMotDePasse.PasswordChar = '*';
             this.txtMotDePasse.Size = new System.Drawing.Size(100, 20);
             this.txtMotDePasse.TabIndex = 3;
             // 
@@ -75,6 +76,7 @@
             this.btnSeConnecter.TabIndex = 4;
             this.btnSeConnecter.Text = "Se Connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
+            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // frmSeConnecter
             // 

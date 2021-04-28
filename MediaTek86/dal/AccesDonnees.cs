@@ -17,6 +17,33 @@ namespace MediaTek86.dal
         private static string connectionString = "server=localhost;user id=admin;password=wHIwAcI3DijYBRvO;database=mediatek86;SslMode=none";
 
         /// <summary>
+        /// Controle si l'utillisateur a le droit de se connecter
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        public static Boolean ControleAuthentification(string login, string pwd)
+        {
+            string req = "select * from responsable r ";
+            req += "where r.login=@login and r.pwd=SHA2(@pwd, 256)";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@login", login);
+            parameters.Add("@pwd", pwd);
+            ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+            if (curs.Read())
+            {
+                curs.Close();
+                return true;
+            }
+            else
+            {
+                curs.Close();
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Récupère et retourne le personnel provenant de la BDD
         /// </summary>
         /// <returns>liste du personnel</returns>

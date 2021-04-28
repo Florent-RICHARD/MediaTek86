@@ -16,6 +16,11 @@ namespace MediaTek86.controle
     public class Controle
     {
         /// <summary>
+        /// instance de frmSeConnecter
+        /// </summary>
+        private frmSeConnecter frmSeConnecter;
+
+        /// <summary>
         /// instance de frmListePersonnel
         /// </summary>
         private frmListePersonnel frmListePersonnel;
@@ -45,8 +50,30 @@ namespace MediaTek86.controle
         /// </summary>
         public Controle()
         {
-            frmListePersonnel = new frmListePersonnel(this);
-            frmListePersonnel.ShowDialog();
+            frmSeConnecter = new frmSeConnecter(this);
+            frmSeConnecter.ShowDialog();
+        }
+
+        /// <summary>
+        /// Demande la vérification de l'authentification
+        /// Si correct, alors ouvre la fenêtre principale
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        public Boolean ControleAuthentification(string login, string pwd)
+        {
+            if (AccesDonnees.ControleAuthentification(login, pwd))
+            {
+                frmSeConnecter.Hide();
+                frmListePersonnel = new frmListePersonnel(this);
+                frmListePersonnel.ShowDialog();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
