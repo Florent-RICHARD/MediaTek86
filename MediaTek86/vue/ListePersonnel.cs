@@ -107,6 +107,7 @@ namespace MediaTek86.vue
         private void btnAjouterPersonnel_Click(object sender, EventArgs e)
         {
             GererZoneTexte(true);
+            txtNom.Focus();
         }
 
         /// <summary>

@@ -58,7 +58,7 @@
             this.btnEnregistrerModif.Location = new System.Drawing.Point(126, 135);
             this.btnEnregistrerModif.Name = "btnEnregistrerModif";
             this.btnEnregistrerModif.Size = new System.Drawing.Size(182, 23);
-            this.btnEnregistrerModif.TabIndex = 25;
+            this.btnEnregistrerModif.TabIndex = 6;
             this.btnEnregistrerModif.Text = "Enregistrer les modifications";
             this.btnEnregistrerModif.UseVisualStyleBackColor = true;
             this.btnEnregistrerModif.Click += new System.EventHandler(this.btnEnregistrerModif_Click);
@@ -70,7 +70,7 @@
             this.cbbService.Location = new System.Drawing.Point(398, 70);
             this.cbbService.Name = "cbbService";
             this.cbbService.Size = new System.Drawing.Size(152, 26);
-            this.cbbService.TabIndex = 24;
+            this.cbbService.TabIndex = 5;
             // 
             // lblService
             // 
@@ -88,7 +88,7 @@
             this.txtPrenom.Location = new System.Drawing.Point(398, 36);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(113, 24);
-            this.txtPrenom.TabIndex = 22;
+            this.txtPrenom.TabIndex = 2;
             // 
             // lblPrenom
             // 
@@ -106,7 +106,7 @@
             this.txtMail.Location = new System.Drawing.Point(126, 96);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(177, 24);
-            this.txtMail.TabIndex = 20;
+            this.txtMail.TabIndex = 4;
             // 
             // txtNom
             // 
@@ -114,7 +114,7 @@
             this.txtNom.Location = new System.Drawing.Point(126, 37);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(113, 24);
-            this.txtNom.TabIndex = 19;
+            this.txtNom.TabIndex = 1;
             // 
             // txtTel
             // 
@@ -122,7 +122,7 @@
             this.txtTel.Location = new System.Drawing.Point(126, 67);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(113, 24);
-            this.txtTel.TabIndex = 18;
+            this.txtTel.TabIndex = 3;
             // 
             // lblMail
             // 
@@ -159,7 +159,7 @@
             this.btnAnnulerModif.Location = new System.Drawing.Point(368, 135);
             this.btnAnnulerModif.Name = "btnAnnulerModif";
             this.btnAnnulerModif.Size = new System.Drawing.Size(182, 23);
-            this.btnAnnulerModif.TabIndex = 26;
+            this.btnAnnulerModif.TabIndex = 7;
             this.btnAnnulerModif.Text = "Annuler les modifications";
             this.btnAnnulerModif.UseVisualStyleBackColor = true;
             this.btnAnnulerModif.Click += new System.EventHandler(this.btnAnnulerModif_Click);

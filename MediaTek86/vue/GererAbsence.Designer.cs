@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEnregistrerAbsence = new System.Windows.Forms.Button();
             this.cbbMotif = new System.Windows.Forms.ComboBox();
             this.lblMotif = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.btnEnregistrerAbsence.Location = new System.Drawing.Point(31, 461);
             this.btnEnregistrerAbsence.Name = "btnEnregistrerAbsence";
             this.btnEnregistrerAbsence.Size = new System.Drawing.Size(182, 23);
-            this.btnEnregistrerAbsence.TabIndex = 29;
+            this.btnEnregistrerAbsence.TabIndex = 8;
             this.btnEnregistrerAbsence.Text = "Enregistrer l\'absence";
             this.btnEnregistrerAbsence.UseVisualStyleBackColor = true;
             this.btnEnregistrerAbsence.Click += new System.EventHandler(this.btnEnregistrerAbsence_Click);
@@ -66,7 +66,7 @@
             this.cbbMotif.Location = new System.Drawing.Point(152, 429);
             this.cbbMotif.Name = "cbbMotif";
             this.cbbMotif.Size = new System.Drawing.Size(152, 26);
-            this.cbbMotif.TabIndex = 28;
+            this.cbbMotif.TabIndex = 7;
             // 
             // lblMotif
             // 
@@ -103,7 +103,7 @@
             this.btnRetourListePerso.Location = new System.Drawing.Point(556, 315);
             this.btnRetourListePerso.Name = "btnRetourListePerso";
             this.btnRetourListePerso.Size = new System.Drawing.Size(182, 23);
-            this.btnRetourListePerso.TabIndex = 18;
+            this.btnRetourListePerso.TabIndex = 3;
             this.btnRetourListePerso.Text = "Retour à la liste du personnel";
             this.btnRetourListePerso.UseVisualStyleBackColor = true;
             this.btnRetourListePerso.Click += new System.EventHandler(this.btnRetourListePerso_Click);
@@ -113,7 +113,7 @@
             this.btnModifAbsence.Location = new System.Drawing.Point(292, 315);
             this.btnModifAbsence.Name = "btnModifAbsence";
             this.btnModifAbsence.Size = new System.Drawing.Size(182, 23);
-            this.btnModifAbsence.TabIndex = 17;
+            this.btnModifAbsence.TabIndex = 2;
             this.btnModifAbsence.Text = "Modifier l\'absence";
             this.btnModifAbsence.UseVisualStyleBackColor = true;
             this.btnModifAbsence.Click += new System.EventHandler(this.btnModifAbsence_Click);
@@ -123,7 +123,7 @@
             this.btnSupAbsence.Location = new System.Drawing.Point(31, 315);
             this.btnSupAbsence.Name = "btnSupAbsence";
             this.btnSupAbsence.Size = new System.Drawing.Size(182, 23);
-            this.btnSupAbsence.TabIndex = 16;
+            this.btnSupAbsence.TabIndex = 1;
             this.btnSupAbsence.Text = "Supprimer l\'absence";
             this.btnSupAbsence.UseVisualStyleBackColor = true;
             this.btnSupAbsence.Click += new System.EventHandler(this.btnSupAbsence_Click);
@@ -132,14 +132,14 @@
             // 
             this.dgvAbsence.AllowUserToAddRows = false;
             this.dgvAbsence.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAbsence.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAbsence.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAbsence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAbsence.Location = new System.Drawing.Point(32, 33);
             this.dgvAbsence.Name = "dgvAbsence";
@@ -189,21 +189,21 @@
             this.dtpDateDebut.Location = new System.Drawing.Point(152, 369);
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(173, 20);
-            this.dtpDateDebut.TabIndex = 35;
+            this.dtpDateDebut.TabIndex = 5;
             // 
             // dtpDateFin
             // 
             this.dtpDateFin.Location = new System.Drawing.Point(152, 403);
             this.dtpDateFin.Name = "dtpDateFin";
             this.dtpDateFin.Size = new System.Drawing.Size(173, 20);
-            this.dtpDateFin.TabIndex = 36;
+            this.dtpDateFin.TabIndex = 6;
             // 
             // btnAjouterAbsence
             // 
             this.btnAjouterAbsence.Location = new System.Drawing.Point(32, 344);
             this.btnAjouterAbsence.Name = "btnAjouterAbsence";
             this.btnAjouterAbsence.Size = new System.Drawing.Size(182, 23);
-            this.btnAjouterAbsence.TabIndex = 37;
+            this.btnAjouterAbsence.TabIndex = 4;
             this.btnAjouterAbsence.Text = "Ajouter une absence";
             this.btnAjouterAbsence.UseVisualStyleBackColor = true;
             this.btnAjouterAbsence.Click += new System.EventHandler(this.btnAjouterAbsence_Click_1);
@@ -213,7 +213,7 @@
             this.btnAnnulerAjout.Location = new System.Drawing.Point(219, 461);
             this.btnAnnulerAjout.Name = "btnAnnulerAjout";
             this.btnAnnulerAjout.Size = new System.Drawing.Size(152, 23);
-            this.btnAnnulerAjout.TabIndex = 38;
+            this.btnAnnulerAjout.TabIndex = 9;
             this.btnAnnulerAjout.Text = "Annuler";
             this.btnAnnulerAjout.UseVisualStyleBackColor = true;
             this.btnAnnulerAjout.Click += new System.EventHandler(this.btnAnnulerAjout_Click);

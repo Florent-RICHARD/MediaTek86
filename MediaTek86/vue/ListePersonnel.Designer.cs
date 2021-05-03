@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSupPersonnel = new System.Windows.Forms.Button();
             this.btnModifPersonnel = new System.Windows.Forms.Button();
             this.btnGererAbsence = new System.Windows.Forms.Button();
@@ -123,7 +123,7 @@
             this.txtNom.Location = new System.Drawing.Point(122, 360);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(113, 24);
-            this.txtNom.TabIndex = 8;
+            this.txtNom.TabIndex = 5;
             // 
             // txtMail
             // 
@@ -131,7 +131,7 @@
             this.txtMail.Location = new System.Drawing.Point(122, 419);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(261, 24);
-            this.txtMail.TabIndex = 9;
+            this.txtMail.TabIndex = 8;
             // 
             // lblPrenom
             // 
@@ -149,7 +149,7 @@
             this.txtPrenom.Location = new System.Drawing.Point(394, 359);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(113, 24);
-            this.txtPrenom.TabIndex = 11;
+            this.txtPrenom.TabIndex = 6;
             // 
             // lblService
             // 
@@ -168,14 +168,14 @@
             this.cbbService.Location = new System.Drawing.Point(394, 393);
             this.cbbService.Name = "cbbService";
             this.cbbService.Size = new System.Drawing.Size(152, 26);
-            this.cbbService.TabIndex = 13;
+            this.cbbService.TabIndex = 9;
             // 
             // btnAjouterPersonnel
             // 
             this.btnAjouterPersonnel.Location = new System.Drawing.Point(25, 327);
             this.btnAjouterPersonnel.Name = "btnAjouterPersonnel";
             this.btnAjouterPersonnel.Size = new System.Drawing.Size(182, 23);
-            this.btnAjouterPersonnel.TabIndex = 14;
+            this.btnAjouterPersonnel.TabIndex = 4;
             this.btnAjouterPersonnel.Text = "Ajouter au personnel";
             this.btnAjouterPersonnel.UseVisualStyleBackColor = true;
             this.btnAjouterPersonnel.Click += new System.EventHandler(this.btnAjouterPersonnel_Click);
@@ -184,14 +184,14 @@
             // 
             this.dgvPersonnel.AllowUserToAddRows = false;
             this.dgvPersonnel.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPersonnel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPersonnel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonnel.Location = new System.Drawing.Point(26, 12);
             this.dgvPersonnel.Name = "dgvPersonnel";
@@ -205,7 +205,7 @@
             this.btnEnregistrerPersonnel.Location = new System.Drawing.Point(122, 449);
             this.btnEnregistrerPersonnel.Name = "btnEnregistrerPersonnel";
             this.btnEnregistrerPersonnel.Size = new System.Drawing.Size(182, 23);
-            this.btnEnregistrerPersonnel.TabIndex = 16;
+            this.btnEnregistrerPersonnel.TabIndex = 10;
             this.btnEnregistrerPersonnel.Text = "Enregistrer au personnel";
             this.btnEnregistrerPersonnel.UseVisualStyleBackColor = true;
             this.btnEnregistrerPersonnel.Click += new System.EventHandler(this.btnEnregistrerPersonnel_Click);
@@ -215,7 +215,7 @@
             this.btnAnnulerAjout.Location = new System.Drawing.Point(394, 449);
             this.btnAnnulerAjout.Name = "btnAnnulerAjout";
             this.btnAnnulerAjout.Size = new System.Drawing.Size(152, 23);
-            this.btnAnnulerAjout.TabIndex = 17;
+            this.btnAnnulerAjout.TabIndex = 11;
             this.btnAnnulerAjout.Text = "Annuler";
             this.btnAnnulerAjout.UseVisualStyleBackColor = true;
             this.btnAnnulerAjout.Click += new System.EventHandler(this.btnAnnulerAjout_Click);

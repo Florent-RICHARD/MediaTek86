@@ -68,7 +68,7 @@
             this.btnEnregistrer.Location = new System.Drawing.Point(19, 174);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(182, 23);
-            this.btnEnregistrer.TabIndex = 37;
+            this.btnEnregistrer.TabIndex = 4;
             this.btnEnregistrer.Text = "Enregistrer les modifications";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
             this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
@@ -85,7 +85,7 @@
             this.cbbMotif.Location = new System.Drawing.Point(138, 142);
             this.cbbMotif.Name = "cbbMotif";
             this.cbbMotif.Size = new System.Drawing.Size(152, 26);
-            this.cbbMotif.TabIndex = 36;
+            this.cbbMotif.TabIndex = 3;
             // 
             // lblMotif
             // 
@@ -158,7 +158,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(318, 174);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(182, 23);
-            this.btnAnnuler.TabIndex = 42;
+            this.btnAnnuler.TabIndex = 5;
             this.btnAnnuler.Text = "Annuler les modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -168,14 +168,14 @@
             this.dtpDateDebut.Location = new System.Drawing.Point(138, 84);
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(173, 20);
-            this.dtpDateDebut.TabIndex = 43;
+            this.dtpDateDebut.TabIndex = 1;
             // 
             // dtpDateFin
             // 
             this.dtpDateFin.Location = new System.Drawing.Point(138, 112);
             this.dtpDateFin.Name = "dtpDateFin";
             this.dtpDateFin.Size = new System.Drawing.Size(173, 20);
-            this.dtpDateFin.TabIndex = 44;
+            this.dtpDateFin.TabIndex = 2;
             // 
             // frmModificationAbsence
             // 

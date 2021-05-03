@@ -58,7 +58,7 @@
             this.txtLogin.Location = new System.Drawing.Point(109, 17);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
-            this.txtLogin.TabIndex = 2;
+            this.txtLogin.TabIndex = 1;
             // 
             // txtMotDePasse
             // 
@@ -66,14 +66,14 @@
             this.txtMotDePasse.Name = "txtMotDePasse";
             this.txtMotDePasse.PasswordChar = '*';
             this.txtMotDePasse.Size = new System.Drawing.Size(100, 20);
-            this.txtMotDePasse.TabIndex = 3;
+            this.txtMotDePasse.TabIndex = 2;
             // 
             // btnSeConnecter
             // 
             this.btnSeConnecter.Location = new System.Drawing.Point(247, 51);
             this.btnSeConnecter.Name = "btnSeConnecter";
             this.btnSeConnecter.Size = new System.Drawing.Size(100, 20);
-            this.btnSeConnecter.TabIndex = 4;
+            this.btnSeConnecter.TabIndex = 3;
             this.btnSeConnecter.Text = "Se Connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
             this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
