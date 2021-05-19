@@ -6,12 +6,21 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.modele
 {
+    /// <summary>
+    /// Classe Service
+    /// </summary>
     public class Service
     {
         private int idservice;
         private string nom;
 
+        /// <summary>
+        /// Retourne idservice
+        /// </summary>
         public int Idservice { get => idservice; }
+        /// <summary>
+        /// Retourne nom
+        /// </summary>
         public string Nom { get => nom; }
 
         /// <summary>

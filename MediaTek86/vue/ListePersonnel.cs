@@ -26,6 +26,12 @@ namespace MediaTek86.vue
         /// Objet pour gérer la liste des profils
         /// </summary>
         public BindingSource bdgService = new BindingSource();
+
+        /// <summary>
+        /// Initialisation des composants graphiques
+        /// Récupération du controleur
+        /// </summary>
+        /// <param name="controle"></param>
         public frmListePersonnel(Controle controle)
         {
             InitializeComponent();

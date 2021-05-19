@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.dal
 {
-
     public class AccesDonnees
     {
         /// <summary>
@@ -190,6 +189,19 @@ namespace MediaTek86.dal
             parameters.Add("@datedebut", absence.Date_de_debut);
             parameters.Add("@datefin", absence.Date_de_fin);
             parameters.Add("@idmotif", absence.Idmotif);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+        }
+
+        /// <summary>
+        /// Supprime la totalité des absences d'un personel
+        /// </summary>
+        /// <param name="personnel"></param>
+        public static void DelAllAbsence(Personnel personnel)
+        {
+            string req = "delete from absence where idpersonnel = @idpersonnel;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", personnel.Idpersonnel);
             ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
         }

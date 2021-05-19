@@ -19,12 +19,33 @@ namespace MediaTek86.modele
         private int idservice;
         private string service;
 
+        /// <summary>
+        /// Retourne idpersonel
+        /// </summary>
         public int Idpersonnel { get => idpersonnel; }
+        /// <summary>
+        /// Retourne nom
+        /// </summary>
         public string Nom { get => nom; }
+        /// <summary>
+        /// Retourne prenom
+        /// </summary>
         public string Prenom { get => prenom; }
+        /// <summary>
+        /// Retourne tel
+        /// </summary>
         public string Tel { get => tel; }
+        /// <summary>
+        /// Retourne mail
+        /// </summary>
         public string Mail { get => mail; }
+        /// <summary>
+        /// Retourne idservice
+        /// </summary>
         public int Idservice { get => idservice; }
+        /// <summary>
+        /// Retourne service
+        /// </summary>
         public string Service { get => service; }
 
         /// <summary>
@@ -36,6 +57,7 @@ namespace MediaTek86.modele
         /// <param name="tel"></param>
         /// <param name="mail"></param>
         /// <param name="idservice"></param>
+        /// <param name="service"></param>
         public Personnel(int idpersonnel, string nom, string prenom, string tel, string mail, int idservice, string service)
         {
             this.idpersonnel = idpersonnel;

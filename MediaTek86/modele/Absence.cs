@@ -20,12 +20,33 @@ namespace MediaTek86.modele
         private int idmotif;
         private string motif;
 
+        /// <summary>
+        /// Retourne idpersonnel
+        /// </summary>
         public int Idpersonnel { get => idpersonnel; }
+        /// <summary>
+        /// Retourne nom
+        /// </summary>
         public string Nom { get => nom; }
+        /// <summary>
+        /// Retourne prenom
+        /// </summary>
         public string Prenom { get => prenom; }
+        /// <summary>
+        /// Retourne datedebut
+        /// </summary>
         public DateTime Date_de_debut { get => datedebut; }
+        /// <summary>
+        /// Retourne datefin
+        /// </summary>
         public DateTime Date_de_fin { get => datefin; }
+        /// <summary>
+        /// Retourne idmotif
+        /// </summary>
         public int Idmotif { get => idmotif; }
+        /// <summary>
+        /// Retourne motif
+        /// </summary>
         public string Motif { get => motif; }
 
         /// <summary>

@@ -14,8 +14,14 @@ namespace MediaTek86.modele
         // Déclaration des propriétés
         private int idmotif;
         private string libelle;
-
+        
+        /// <summary>
+        /// Retourne idmotif
+        /// </summary>
         public int Idmotif { get => idmotif; }
+        /// <summary>
+        /// Retourne libelle
+        /// </summary>
         public string Libelle { get => libelle; }
 
         /// <summary>

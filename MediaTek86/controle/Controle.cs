@@ -158,6 +158,7 @@ namespace MediaTek86.controle
             Personnel personnel = (Personnel)frmListePersonnel.bdgPersonnel.List[frmListePersonnel.bdgPersonnel.Position];
             if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                AccesDonnees.DelAllAbsence(personnel);
                 AccesDonnees.DelPersonnel(personnel);
             }
         }
@@ -181,6 +182,9 @@ namespace MediaTek86.controle
             frmModificationPersonnel.ShowDialog();
         }
 
+        /// <summary>
+        /// Demande pour acceder à la modification d'une absence
+        /// </summary>
         public void DemUpdateAbsence()
         {
             // Ferme la fenêtre active
@@ -254,7 +258,11 @@ namespace MediaTek86.controle
         /// <summary>
         /// Demande d'ajout d'une absence
         /// </summary>
-        /// <param name="absence"></param>
+        /// <param name="idpersonnel"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="datedebut"></param>
+        /// <param name="datefin"></param>
         public void AddAbsence(int idpersonnel, string nom, string prenom, DateTime datedebut, DateTime datefin)
         {
             Console.WriteLine(frmGererAbsence.GetIdPersonnel());
@@ -268,7 +276,6 @@ namespace MediaTek86.controle
         /// <summary>
         /// Demande de suppression d'une absence
         /// </summary>
-        /// <param name="absence"></param>
         public void DelAbsence()
         {
             Absence absence = (Absence)frmGererAbsence.bdgAbsence.List[frmGererAbsence.bdgAbsence.Position];

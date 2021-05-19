@@ -34,8 +34,6 @@ namespace MediaTek86.vue
         /// </summary>
         private Controle controle;
 
-        public frmModificationAbsence frmModificationAbsence;
-
         /// <summary>
         /// Permet de changer la valeur de idpersonnel
         /// </summary>
